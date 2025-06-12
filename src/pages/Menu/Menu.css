@@ -1,0 +1,81 @@
+/* Menu.css */
+.menu-page {
+  padding: 6rem 1.5rem 2rem;
+  background-color: #fef3c7;
+  min-height: 100vh;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.menu-header h1 {
+  font-size: 2.5rem;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+.menu-header p {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.filters-container {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background-color: #fef3c7;
+  border-radius: 8px;
+}
+
+.price-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.price-filter {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d97706;
+  background: transparent;
+  color: #92400e;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.price-filter:hover {
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.price-filter.active {
+  background: #d97706;
+  color: white;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.no-items {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .menu-page {
+    padding-top: 5rem;
+  }
+  
+  .menu-header h1 {
+    font-size: 2rem;
+  }
+}

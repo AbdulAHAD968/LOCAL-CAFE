@@ -1,0 +1,118 @@
+/* Contact.css */
+.contact-page {
+  padding: 6rem 1.5rem 2rem;
+  background-color: #fef3c7;
+  min-height: 100vh;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+  color: #92400e;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contact-icon {
+  margin-right: 1rem;
+  color: #d97706;
+  font-size: 1.2rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-links h3 {
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #d97706;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #92400e;
+}
+
+.hours {
+  margin-top: 2rem;
+}
+
+.hours h3 {
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.hours p {
+  margin-bottom: 0.5rem;
+}
+
+.map-container {
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary-section {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding-top: 5rem;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+}

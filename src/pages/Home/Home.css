@@ -1,0 +1,92 @@
+/* Home.css */
+.home {
+  padding-top: 80px;
+  background-color: #fef3c7;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.mission-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background-color: #fef3c7;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #92400e;
+}
+
+.mission-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.featured-section {
+  padding: 3rem 1.5rem;
+  background-color: #fef3c7;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.parallax-section {
+  height: 400px;
+  background-image: url('12.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.parallax-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.parallax-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.parallax-text {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .parallax-section {
+    height: 300px;
+    background-attachment: scroll;
+  }
+  
+  .parallax-title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,42 @@
+/* FilterButtons.css */
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d97706;
+  background: transparent;
+  color: #92400e;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: capitalize;
+}
+
+.filter-button:hover {
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.filter-button.active {
+  background: #d97706;
+  color: white;
+}
+
+.category-buttons .filter-button {
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .filter-buttons {
+    gap: 0.3rem;
+  }
+  
+  .filter-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
