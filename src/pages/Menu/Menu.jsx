@@ -11,13 +11,13 @@ const Menu = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartNotification, setIsCartNotification] = useState(false);
 
-  const categories = ['all', 'chai', 'snacks', 'combos'];
+  const categories = ['all', 'chai', 'snacks', 'combos' , 'paratha'];
 
   const priceRanges = [
     { id: 'all', label: 'All Prices' },
-    { id: 'under50', label: 'Under ₹50' },
-    { id: '50to100', label: '₹50 - ₹100' },
-    { id: 'over100', label: 'Over ₹100' }
+    { id: 'under50', label: 'Under Rs.50' },
+    { id: '50to100', label: 'Rs.50 - Rs.100' },
+    { id: 'over100', label: 'Over Rs.100' }
   ];
 
   useEffect(() => {

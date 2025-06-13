@@ -109,3 +109,33 @@
     font-size: 1.5rem;
   }
 }
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #d97706;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease, width 0.35s ease;
+}
+
+.nav-link:hover {
+  color: #d97706;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  transform: translateX(-50%) scaleX(1);
+}

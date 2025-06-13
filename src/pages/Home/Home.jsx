@@ -6,6 +6,7 @@ import MenuCard from '../../components/MenuCard/MenuCard';
 import StyledLink from '../../components/commonStyles/StyledLink';
 import './Home.css';
 import img12 from '../images/12.png';
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 import {
   containerVariants,
@@ -15,35 +16,54 @@ import {
   slideInFromRight
 } from '../../components/commonStyles/variants';
 
-
 const Home = () => {
-
   const featuredItems = [
     {
       id: 1,
       name: 'Masala Chai',
       description: 'Traditional spiced tea with ginger, cardamom, and cinnamon',
       price: 30,
-      image: img12
+      image: img12,
+      premium: true
     },
     {
       id: 2,
       name: 'Samosa',
       description: 'Crispy pastry filled with spiced potatoes and peas',
       price: 25,
-      image: img12
+      image: img12,
+      premium: true
     },
     {
       id: 3,
       name: 'Chai + Biscuit Combo',
       description: 'Perfect pairing of our signature chai with crispy biscuits',
       price: 40,
-      image: img12
+      image: img12,
+      premium: true
     }
   ];
 
+  const renderStars = (rating) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    
+    for (let i = 1; i <= 5; i++) {
+      if (i <= fullStars) {
+        stars.push(<FaStar key={i} className="gold-star" />);
+      } else if (i === fullStars + 1 && hasHalfStar) {
+        stars.push(<FaStarHalfAlt key={i} className="gold-star" />);
+      } else {
+        stars.push(<FaRegStar key={i} className="gold-star" />);
+      }
+    }
+    
+    return stars;
+  };
+
   return (
-    <div className="home">
+    <div className="home premium-contact-page">
       <Carousel />
       
       <motion.section 
@@ -54,15 +74,18 @@ const Home = () => {
         variants={containerVariants}
       >
         <motion.div variants={fadeUp}>
-          <h2 className="section-title">Our Mission</h2>
+          <h2 className="section-title">
+            <span className="gold-accent-text">Our Mission</span>
+          </h2>
           <motion.p 
             className="mission-text"
             variants={fadeIn}
           >
-            At Chai Mahfil, we bring people together over the finest chai and snacks, 
+            At <span className="gold-accent-text">Chai Mahfil</span>, we bring people together over the finest chai and snacks, 
             creating moments of joy and connection. Our ingredients are locally sourced, 
             and every cup is brewed with care and tradition.
           </motion.p>
+          <div className="gold-divider"></div>
         </motion.div>
       </motion.section>
       
@@ -74,7 +97,7 @@ const Home = () => {
         variants={containerVariants}
       >
         <motion.h2 className="section-title" variants={slideInFromLeft}>
-          Featured Items
+          <span className="gold-accent-text">Featured Items</span>
         </motion.h2>
         <div className="featured-grid">
           {featuredItems.map((item, index) => (
@@ -85,6 +108,7 @@ const Home = () => {
               <MenuCard 
                 item={item}
                 delay={index * 0.1}
+                premium={true}
               />
             </motion.div>
           ))}
@@ -92,7 +116,7 @@ const Home = () => {
       </motion.section>
       
       <motion.section 
-        className="parallax-section"
+        className="parallax-section premium-parallax"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -106,7 +130,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Experience the Authentic Taste
+            Experience the <span className="gold-accent-text">Authentic Taste</span>
           </motion.h2>
           <motion.p 
             className="parallax-text"
@@ -129,7 +153,7 @@ const Home = () => {
         variants={containerVariants}
       >
         <motion.div variants={fadeUp}>
-          <h2 className="cta-title">Ready to Experience Chai Mahfil?</h2>
+          <h2 className="cta-title">Ready to Experience <span className="gold-accent-text">Chai Mahfil</span>?</h2>
           <motion.div 
             className="cta-buttons"
             variants={fadeIn}
@@ -139,66 +163,79 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
               variants={slideInFromLeft}
             >
-              <Link to="/contact" className="cta-button visit-button">
+              <Link to="/contact" className="cta-button visit-button premium-button">
                 Visit Us
               </Link>
-              
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               variants={slideInFromRight}
             >
-              <Link to="/menu" className="cta-button order-button">
+              <Link to="/menu" className="cta-button order-button premium-button">
                 Order Now
               </Link>
-
             </motion.div>
           </motion.div>
         </motion.div>
       </motion.section>
 
-      {/* Testimonials Section */}
-      <motion.section 
-        className="testimonials-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={containerVariants}
-      >
-        <motion.h2 className="section-title" variants={fadeUp}>
-          What Our Customers Say
-        </motion.h2>
-        <div className="testimonials-grid">
+      {/* Premium Testimonial Section */}
+      <div className="testimonial-section premium-testimonials">
+        <div className="section-header">
+          <h2><span className="gold-accent-text">What Our Customers Say</span></h2>
+          <div className="gold-line"></div>
+        </div>
+        <div className="testimonials">
           <motion.div 
-            className="testimonial-card"
-            variants={slideInFromLeft}
+            className="testimonial-card premium-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            <p className="testimonial-text">
-              "The best chai in town! The aroma and flavor take me back to my childhood."
-            </p>
-            <p className="testimonial-author">- Priya S.</p>
+            <div className="testimonial-quote gold-accent-text">"</div>
+            <p>The best chai experience in AhmedPur! The ambiance takes you back to the royal era of Pakistani tea houses.</p>
+            <div className="rating">
+              {renderStars(4.5)}
+              <span className="rating-text">4.5/5</span>
+            </div>
+            <div className="testimonial-author">- Sheikh Anas</div>
           </motion.div>
+          
           <motion.div 
-            className="testimonial-card"
-            variants={fadeUp}
+            className="testimonial-card premium-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
           >
-            <p className="testimonial-text">
-              "A perfect place to unwind after work. Their samosas are crispy and delicious."
-            </p>
-            <p className="testimonial-author">- Rajesh K.</p>
+            <div className="testimonial-quote gold-accent-text">"</div>
+            <p>Authentic flavors with premium service. Their special chai is worth every penny!</p>
+            <div className="rating">
+              {renderStars(5)}
+              <span className="rating-text">5/5</span>
+            </div>
+            <div className="testimonial-author">- Ahmer Sagheer</div>
           </motion.div>
+          
           <motion.div 
-            className="testimonial-card"
-            variants={slideInFromRight}
+            className="testimonial-card premium-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
           >
-            <p className="testimonial-text">
-              "Friendly staff and authentic taste. My go-to place for chai cravings!"
-            </p>
-            <p className="testimonial-author">- Ananya M.</p>
+            <div className="testimonial-quote gold-accent-text">"</div>
+            <p>Perfect blend of tradition and luxury. The staff makes you feel like royalty.</p>
+            <div className="rating">
+              {renderStars(4)}
+              <span className="rating-text">4/5</span>
+            </div>
+            <div className="testimonial-author">- Abdul Samad</div>
           </motion.div>
         </div>
-      </motion.section>
+      </div>
     </div>
   );
 };

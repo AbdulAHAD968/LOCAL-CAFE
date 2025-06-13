@@ -1,118 +1,368 @@
-/* Contact.css */
-.contact-page {
-  padding: 6rem 1.5rem 2rem;
-  background-color: #fef3c7;
-  min-height: 100vh;
+/* Premium Contact Page Styles */
+.premium-contact-page {
+  --primary-color: #d97706;
+  --primary-dark: #92400e;
+  --primary-light: #fef3c7;
+  --gold-accent: #c9a227;
+  --light-bg: #f8f4e9;
+  --text-color: #333;
+  --text-light: #666;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  background-color: white;
+  line-height: 1.6;
 }
 
-.contact-header {
+/* Hero Section */
+.contact-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../images/chai-contact-bg.png') center/cover no-repeat;
+  color: white;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.contact-hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.decorative-leaf {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--primary-light);
+}
+
+/* Main Container */
+.premium-contact-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+  padding: 0 1rem;
+  gap: 3rem;
+}
+
+.premium-contact-info {
+  flex: 1;
+  padding: 1rem;
+}
+
+.premium-map-container {
+  flex: 1;
+  height: 500px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.map-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-bg);
+  z-index: 2;
+}
+
+.map-placeholder .placeholder-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.map-placeholder p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.map-loaded {
+  filter: none !important;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.gold-line {
+  width: 80px;
+  height: 3px;
+  background-color: var(--gold-accent);
+  margin: 0 auto;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.contact-header h1 {
-  font-size: 2.5rem;
-  color: #92400e;
-  margin-bottom: 0.5rem;
-}
-
-.contact-header p {
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.contact-info {
+.contact-card {
   background: white;
-  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(217, 119, 6, 0.1);
 }
 
-.contact-info h2 {
-  color: #92400e;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+.contact-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.contact-item {
+.contact-icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.gold-bg {
+  background-color: var(--gold-accent);
+}
+
+.green-bg {
+  background-color: #065f46;
+}
+
+.brown-bg {
+  background-color: var(--primary-dark);
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
   margin-bottom: 1rem;
+  color: var(--primary-dark);
 }
 
-.contact-icon {
-  margin-right: 1rem;
-  color: #d97706;
-  font-size: 1.2rem;
+.contact-card p, .contact-card address {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-style: normal;
 }
 
-.social-links {
-  margin-top: 2rem;
+/* Social Section */
+.social-section {
+  text-align: center;
+  margin-top: 3rem;
 }
 
-.social-links h3 {
-  color: #92400e;
-  margin-bottom: 1rem;
+.social-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
 }
 
 .social-icons {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.social-icons a {
-  color: #d97706;
-  font-size: 1.5rem;
-  transition: color 0.3s;
+.social-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-bg);
+  color: var(--primary-dark);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #92400e;
+.social-icon:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-.hours {
-  margin-top: 2rem;
+/* Testimonial Section */
+.testimonial-section {
+  background-color: var(--light-bg);
+  padding: 5rem 2rem;
+  margin-bottom: 5rem;
 }
 
-.hours h3 {
-  color: #92400e;
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-top: 3px solid var(--gold-accent);
+}
+
+.testimonial-quote {
+  font-size: 3rem;
+  color: var(--primary-light);
+  line-height: 1;
   margin-bottom: 1rem;
 }
 
-.hours p {
-  margin-bottom: 0.5rem;
+.testimonial-card p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
 }
 
-.map-container {
-  height: 400px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary-dark);
 }
 
-.cart-summary-section {
+/* Cart Summary */
+.premium-cart-summary {
   max-width: 1200px;
-  margin: 3rem auto 0;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+/* CTA Section */
+.contact-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(146, 65, 14, 0.415), rgba(146, 65, 14, 0.529)), 
+              url('../images/chai-preparation.webp') center/cover;
+  color: white;
+}
+
+.contact-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--gold-accent);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--gold-accent);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+  font-size: 1.1rem;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .premium-contact-container {
+    flex-direction: column;
+  }
+  
+  .premium-map-container {
+    height: 400px;
+  }
 }
 
 @media (max-width: 768px) {
-  .contact-page {
-    padding-top: 5rem;
+  .contact-hero h1 {
+    font-size: 3rem;
   }
   
-  .contact-container {
+  .contact-hero p {
+    font-size: 1.2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .contact-grid {
     grid-template-columns: 1fr;
   }
   
-  .map-container {
-    height: 300px;
+  .testimonial-section {
+    padding: 3rem 1rem;
+  }
+  
+  .contact-cta h3 {
+    font-size: 1.5rem;
   }
 }
