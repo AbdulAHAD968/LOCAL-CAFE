@@ -25,7 +25,7 @@ const MenuCard = ({ item, onAddToCart, delay = 0 }) => {
         <h3 className="card-title">{item.name}</h3>
         <p className="card-description">{item.description}</p>
         <div className="card-footer">
-          <span className="card-price">₹{item.price}</span>
+          <span className="card-price">Rs.{item.price}</span>
           {onAddToCart && (
             <button 
               className="add-to-cart"

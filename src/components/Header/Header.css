@@ -1,4 +1,14 @@
 /* Header.css */
+@font-face {
+  font-family: 'Agustina Regular';
+  src: local('Agustina Regular'), 
+       url('/src/assets/fonts/Agustina.woff') format('woff2'),
+       url('/src/assets/fonts/Agustina.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -21,17 +31,21 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+  display: block;
+  float: left;
+  font-size: 1.5em;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 700;
-  font-size: 1.5rem;
+  margin-top: 10px;
+  line-height: normal;
 }
 
-.logo-img {
-  height: 40px;
-  margin-right: 0.75rem;
+.logo-name {
+  font-family: "Agustina Regular", cursive;
+  font-weight: 700;
+  padding: 0 10px;
+  color: rgb(61, 64, 91);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }
 
 .nav {
@@ -89,5 +103,9 @@
   
   .menu-toggle {
     display: block;
+  }
+  
+  .logo-name {
+    font-size: 1.5rem;
   }
 }

@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import FilterButtons from '../../components/FilterButtons/FilterButtons';
 import MenuCard from '../../components/MenuCard/MenuCard';
+import { menuItems } from '../../plugNplay/menuItems';
 import './Menu.css';
-import img12 from './12.png';
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
   const [cartItems, setCartItems] = useState([]);
-  
-  const menuItems = [
-    { id: 1, name: 'Masala Chai', category: 'chai', price: 30, description: 'Traditional spiced tea', image: img12 },
-    { id: 2, name: 'Kadak Chai', category: 'chai', price: 25, description: 'Strong brewed tea', image: img12 },
-    { id: 3, name: 'Samosa', category: 'snacks', price: 25, description: 'Spiced potato filling', image: img12 },
-    { id: 4, name: 'Pakora', category: 'snacks', price: 40, description: 'Vegetable fritters', image: img12 },
-    { id: 5, name: 'Bun Maska', category: 'snacks', price: 30, description: 'Bun with butter', image: img12 },
-    { id: 6, name: 'Chai + Biscuit', category: 'combos', price: 40, description: 'Tea with cookies', image: img12 },
-    { id: 7, name: 'Chai + Samosa', category: 'combos', price: 50, description: 'Tea with samosa', image: img12 },
-    { id: 8, name: 'Special Thali', category: 'combos', price: 120, description: 'Assorted snacks with tea', image: img12 },
-  ];
+  const [isCartNotification, setIsCartNotification] = useState(false);
 
   const categories = ['all', 'chai', 'snacks', 'combos'];
+
   const priceRanges = [
     { id: 'all', label: 'All Prices' },
     { id: 'under50', label: 'Under ₹50' },
@@ -49,6 +40,10 @@ const Menu = () => {
   const addToCart = (item) => {
     const newCartItems = [...cartItems, item];
     setCartItems(newCartItems);
+    
+    // Show notification
+    setIsCartNotification(true);
+    setTimeout(() => setIsCartNotification(false), 3000);
     
     // Save to localStorage with 5-minute expiry
     const cartData = {
@@ -79,53 +74,138 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
-      <div className="menu-header">
-        <h1>Our Menu</h1>
-        <p>Discover our authentic flavors</p>
-      </div>
-      
-      <div className="filters-container">
-        <FilterButtons 
-          items={categories} 
-          activeItem={activeCategory} 
-          onChange={setActiveCategory}
-          isCategory
-        />
-        
-        <div className="price-filters">
-          {priceRanges.map(range => (
-            <button
-              key={range.id}
-              className={`price-filter ${priceFilter === range.id ? 'active' : ''}`}
-              onClick={() => setPriceFilter(range.id)}
-            >
-              {range.label}
-            </button>
-          ))}
-        </div>
-      </div>
-      
-      <div className="menu-grid">
-        {filteredItems.map((item, index) => (
-          <motion.div
-            key={item.id}
+      {/* Hero Section */}
+      <div className="menu-hero">
+        <div className="hero-content">
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.05 }}
+            transition={{ duration: 0.6 }}
+            className="hero-title"
           >
-            <MenuCard 
-              item={item} 
-              onAddToCart={addToCart}
-            />
+            Mahfil <span>Menu</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Where every sip tells a story
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="hero-scroll-indicator"
+          >
+            <span>Scroll to explore</span>
+            <div className="scroll-line"></div>
           </motion.div>
-        ))}
+        </div>
+        <div className="hero-overlay"></div>
+        <div className="hero-bg-image"></div>
       </div>
       
-      {filteredItems.length === 0 && (
-        <div className="no-items">
-          <p>No items match your filters. Try adjusting your selection.</p>
+      {/* Main Content */}
+      <div className="menu-content">
+        <div className="filters-container">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="section-header"
+          >
+            <h2>Filter Menu</h2>
+            <p>Find your perfect chai moment</p>
+          </motion.div>
+          
+          <FilterButtons 
+            items={categories} 
+            activeItem={activeCategory} 
+            onChange={setActiveCategory}
+            isCategory
+          />
+          
+          <div className="price-filters">
+            {priceRanges.map(range => (
+              <motion.button
+                key={range.id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`price-filter ${priceFilter === range.id ? 'active' : ''}`}
+                onClick={() => setPriceFilter(range.id)}
+              >
+                {range.label}
+              </motion.button>
+            ))}
+          </div>
         </div>
-      )}
+        
+        <div className="menu-grid">
+          <AnimatePresence>
+            {filteredItems.length > 0 ? (
+              filteredItems.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                >
+                  <MenuCard 
+                    item={item} 
+                    onAddToCart={addToCart}
+                  />
+                </motion.div>
+              ))
+            ) : (
+              <motion.div
+                className="no-items"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="no-items-content">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M9 3v15m-6 0h18M9 18l6-6m0 0l-6-6" />
+                  </svg>
+                  <h3>No items match your filters</h3>
+                  <p>Try adjusting your selection to discover our delicious offerings</p>
+                  <button 
+                    className="reset-filters"
+                    onClick={() => {
+                      setActiveCategory('all');
+                      setPriceFilter('all');
+                    }}
+                  >
+                    Reset Filters
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+      
+      {/* Cart Notification */}
+      <AnimatePresence>
+        {isCartNotification && (
+          <motion.div
+            className="cart-notification"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 13l4 4L19 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span>Item added to cart!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
