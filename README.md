@@ -3,7 +3,7 @@ A modern, responsive web application for browsing menu items, managing cart, and
 
 ---
 
-![Chai Mahfil Logo](public/logo.png)
+![Chai Mahfil Logo](./github-gallery-assets/chai-mahfi;.PNG)
 
 ---
 
@@ -119,5 +119,21 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - [x] Font Awesome / React Icons – Icons
 - [x] StorySet – Free vector illustrations
 
+---
+
 ## Gallery
 
+- [x] Landing Page Image
+  ![Landing Page](./github-gallery-assets/1.PNG)
+- [x] Landing Page CTA
+  ![Landing Page CTA](./github-gallery-assets/2.PNG)
+- [x] Mahfil Menu Image
+  ![Mahfil Menu](./github-gallery-assets/3.PNG)
+- [x] Menu Card Image
+  ![Menu Card](./github-gallery-assets/4.PNG)
+- [x] Cafe Standards Image
+  ![Cafe Standards](./github-gallery-assets/1.PNG)
+- [x] Order Cart Image
+  ![Order Cart](./github-gallery-assets/1.PNG)
+- [x] Customer Reviews Image
+  ![Reviews](./github-gallery-assets/1.PNG)
