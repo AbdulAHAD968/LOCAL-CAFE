@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Carousel from '../../components/Carousel/Carousel';
 import MenuCard from '../../components/MenuCard/MenuCard';
-import StyledLink from '../../components/commonStyles/StyledLink';
 import './Home.css';
-import img12 from '../images/12.png';
+
+import img13 from '../images/chai-image-home.webp';
+import img14 from '../images/samosa-home.webp';
+import img15 from '../images/chicken-paratha-home.jpg';
+
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 import {
@@ -20,26 +23,26 @@ const Home = () => {
   const featuredItems = [
     {
       id: 1,
-      name: 'Masala Chai',
+      name: 'Karak Chai',
       description: 'Traditional spiced tea with ginger, cardamom, and cinnamon',
-      price: 30,
-      image: img12,
+      price: 60,
+      image: img13,
       premium: true
     },
     {
       id: 2,
       name: 'Samosa',
       description: 'Crispy pastry filled with spiced potatoes and peas',
-      price: 25,
-      image: img12,
+      price: 40,
+      image: img14,
       premium: true
     },
     {
       id: 3,
-      name: 'Chai + Biscuit Combo',
+      name: 'Chicken Paratha',
       description: 'Perfect pairing of our signature chai with crispy biscuits',
-      price: 40,
-      image: img12,
+      price: 150,
+      image: img15,
       premium: true
     }
   ];

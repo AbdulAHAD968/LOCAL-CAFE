@@ -1,17 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/../cafe.gif" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Chai-Mahfil</title>
+    <meta author="Abdul Ahad" />
+
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8B4513" /> <!-- Brown color theme -->
+    
+    <!-- Favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/../cafe.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/../cafe.png" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Chai Mahfil - Authentic Pakistani Tea & Snacks Experience</title>
+    <meta name="title" content="Chai Mahfil - Authentic Pakistani Tea & Snacks Experience">
+    <meta name="description" content="Experience the authentic taste of Pakistani chai, snacks, and desserts at Chai Mahfil. Our menu features traditional beverages, parathas, and sweet treats in a cozy atmosphere.">
+    <meta name="keywords" content="chai, Pakistani tea, masala chai, snacks, paratha, ice cream, beverages, desserts, cafe, tea house">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chai-mahfil.vercel.app/">
+    <meta property="og:title" content="Chai Mahfil - Authentic Pakistani Tea & Snacks Experience">
+    <meta property="og:description" content="Experience the authentic taste of Pakistani chai, snacks, and desserts at Chai Mahfil.">
+    
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chai-mahfil.vercel.app/">
+    <meta property="twitter:title" content="Chai Mahfil - Authentic PakistaniTea & Snacks Experience">
+    <meta property="twitter:description" content="Experience the authentic taste of Pakistani chai, snacks, and desserts at Chai Mahfil.">
+    <meta property="twitter:image" content="%PUBLIC_URL%/social-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://chai-mahfil.vercel.app/" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Structured Data / Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Chai Mahfil",
+      "description": "Authentic Pakistani tea house serving traditional chai, snacks and desserts",
+      "url": "https://chai-mahfil.vercel.app/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ishaq wahla market Near Alsaudia Pump Fuji Park Road",
+        "addressLocality": "AhmedPur East",
+        "addressRegion": "Punjab",
+        "postalCode": "63350",
+        "addressCountry": "Pakistan"
+      },
+      "telephone": "+92 000 0000000",
+      "openingHours": "Mo-Su 18:00-1:00",
+      "image": "%PUBLIC_URL%/social-preview.jpg",
+      "priceRange": "50-500 PKR",
+      "menu": "https://chai-mahfil.vercel.app/menu",
+      "servesAlcohol": false,
+      "hasMenu": true,
+      "servesCuisine": "Pakistani"
+    }
+    </script>
+    
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-title" content="Chai Mahfil">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- PWA Theme Color -->
+    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
     <div id="root"></div>

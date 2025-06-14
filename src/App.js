@@ -6,6 +6,8 @@ import Menu from './pages/Menu/Menu';
 import Contact from './pages/Contact/Contact';
 import Info from './pages/Info/Info';
 import NotFound from './pages/NotFound/NotFound';
+import Cart from './pages/Cart/Cart';
+
 import './App.css';
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/info" element={<Info />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} /> {/* fallback 404 */}
           </Routes>
         </main>

@@ -5,20 +5,30 @@ import './Info.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   FaHandsWash, 
-  FaCertificate, 
+  // FaCertificate, 
   FaLeaf, 
   FaSearch,
   FaArrowRight
 } from 'react-icons/fa';
 
+import img1 from '../images/cafe-img/1.PNG';
+import img2 from '../images/cafe-img/2.PNG';
+import img3 from '../images/cafe-img/3.PNG';
+import img4 from '../images/cafe-img/4.PNG';
+import img5 from '../images/cafe-img/5.PNG';
+import img7 from '../images/cafe-img/7.PNG';
+import img8 from '../images/cafe-img/8.PNG';
+
+
 // Sample images for the gallery
 const galleryImages = [
-  '/images/12.png',
-  '/images/tea-leaves.jpg',
-  '/images/cafe-interior.jpg',
-  '/images/hygiene-cert.jpg',
-  '/images/local-farmers.jpg',
-  '/images/chai-serving.jpg'
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img7,
+  img8
 ];
 
 const InfoStandards = () => {
@@ -96,7 +106,7 @@ const InfoStandards = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Serving AhmedPur East's finest chai with traditional values and uncompromising modern standards."
+            "Serving AhmedPur East's finest chai with traditional values and uncompromising modern standards."
           </motion.p>
         </div>
         

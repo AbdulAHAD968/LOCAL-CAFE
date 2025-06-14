@@ -100,7 +100,7 @@ const Contact = () => {
                 <FaPhone />
               </div>
               <h3>Call Us</h3>
-              <p>+91 98765 43210</p>
+              <p>+92 000 0000000</p>
             </motion.div>
             
             <motion.div 
@@ -112,7 +112,7 @@ const Contact = () => {
                 <FaWhatsapp />
               </div>
               <h3>WhatsApp</h3>
-              <p>+91 98765 43210</p>
+              <p>+92 000 0000000</p>
             </motion.div>
             
             <motion.div 
@@ -124,7 +124,7 @@ const Contact = () => {
                 <FaMapMarkerAlt />
               </div>
               <h3>Visit Us</h3>
-              <address>123 Chai Street, Mumbai, Maharashtra 400001</address>
+              <address> Ishaq wahla market Near Alsaudia Pump Fuji Park Road - AhmedPur East, Punjab, Pakistan</address>
             </motion.div>
             
             <motion.div 
@@ -136,8 +136,8 @@ const Contact = () => {
                 <FaClock />
               </div>
               <h3>Opening Hours</h3>
-              <p>Mon-Fri: 7AM - 10PM</p>
-              <p>Sat-Sun: 8AM - 11PM</p>
+              <p>Mon-Fri: 6:00PM - 12:00AM</p>
+              <p>Sat-Sun: 5:00PM - 1:00AM</p>
             </motion.div>
           </div>
           
@@ -190,7 +190,7 @@ const Contact = () => {
             )}
             <iframe
               title="Chai Mahfil Location"
-              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.715973047157!2d72.8242143153766!3d19.0339872582289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce3a13e5f5e5%3A0x1b02a5f5a5f5a5f5!2sChai%20Mahfil!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin${isMapLoaded ? '' : '&output=embed'}`}
+              src={`https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d727.2178180171242!2d71.2766093!3d29.1292937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393bcbd0383bcef1%3A0xbb320dd62297e8d4!2s47HG%2BMQ4%2C%20Ahmadpur%20East%2C%20Pakistan!5e1!3m2!1sen!2s!4v1749816685484!5m2!1sen!2s${isMapLoaded ? '' : '&output=embed'}`}
               width="100%"
               height="100%"
               style={{ border: 0, filter: isMapLoaded ? 'none' : 'blur(5px)' }}
@@ -201,34 +201,17 @@ const Contact = () => {
           </div>
         </motion.div>
       </div>
-
-      
-      {/* Cart Summary */}
-      {cartItems.length > 0 && (
-        <motion.div 
-          className="premium-cart-summary"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="section-header">
-            <h2>Your Chai Selection</h2>
-            <div className="gold-line"></div>
-          </div>
-          <CartSummary items={cartItems} onClear={clearCart} premiumMode={true} />
-        </motion.div>
-      )}
       
       {/* Footer CTA */}
       <div className="contact-cta">
         <FaGlassCheers className="cta-icon" />
         <h3>Ready to experience premium chai?</h3>
         <motion.a 
-          href="/reservations" 
+          href="/contact" 
           className="cta-button"
           whileHover={{ scale: 1.05, boxShadow: '0 5px 15px rgba(217, 119, 6, 0.4)' }}
         >
-          Book a Table
+          Visit Now!
         </motion.a>
       </div>
     </div>

@@ -1,6 +1,7 @@
 /* Home.css */
 html {
   scroll-behavior: smooth;
+  
 }
 
 .home {
@@ -14,7 +15,7 @@ html {
   margin: 0 auto;
   padding: 4rem 1.5rem;
   text-align: center;
-  background-color: #f3e4a6;
+  background-color: #92410edc;
 }
 
 .section-title {
@@ -43,7 +44,7 @@ html {
 .featured-section {
   padding: 3rem 1.5rem;
   text-align: center;
-  background-color: #f3e4a6;
+  background-color: #92410edc;
 }
 
 .featured-grid {
@@ -56,7 +57,7 @@ html {
 
 .parallax-section {
   height: 400px;
-  background-image: url('../images/12.png');
+  background-image: url('../images/Camera-bro.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -90,13 +91,14 @@ html {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .parallax-text {
   font-size: 1.3rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   display: block;
+  font-weight: 500;
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
@@ -174,11 +176,11 @@ html {
 }
 
 .testimonial-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.515);
   padding: 2rem;
   border-radius: 8px;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.296);
   border-top: 3px solid var(--gold-accent);
 }
 
@@ -194,10 +196,11 @@ html {
   font-style: italic;
   color: var(--text-color);
   margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .testimonial-author {
-  font-weight: 600;
+  font-weight: 800;
   color: var(--primary-dark);
 }
 
@@ -286,7 +289,7 @@ img.lazy-loaded {
 
 .gold-accent-text {
   color: var(--gold-accent);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .gold-divider {
@@ -298,11 +301,12 @@ img.lazy-loaded {
 
 .premium-parallax {
   background: linear-gradient(rgba(0, 0, 0, 0.244), rgba(0, 0, 0, 0.268)), 
-              url('../images/12.png');
+              url('../images/Make\ it\ rain-amico.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-size: contain;
   padding: 5rem 0;
 }
 

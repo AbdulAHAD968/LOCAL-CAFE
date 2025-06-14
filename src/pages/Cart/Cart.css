@@ -1,0 +1,254 @@
+.cart-page {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 7%;
+  min-height: 80vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fffaf5;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cart-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #7e4c1e;
+  width: 42px;
+  height: 42px;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.back-to-menu {
+  color: #7e4c1e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.back-to-menu:hover {
+  color: #a26232;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-cart svg {
+  margin-bottom: 1rem;
+  stroke-width: 1.8;
+  color: #d3b08a;
+}
+
+.empty-cart h3 {
+  font-size: 1.75rem;
+  color: #4d2c15;
+  margin-bottom: 0.5rem;
+}
+
+.empty-cart p {
+  color: #8c7763;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart-items {
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  border-bottom: 1px solid #eee2d0;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.cart-item:hover {
+  background-color: #fff2e3;
+  border-radius: 8px;
+}
+
+.item-info h3 {
+  font-size: 1.15rem;
+  color: #5c3312;
+  margin-bottom: 0.25rem;
+}
+
+.item-category {
+  color: #a88c72;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+
+.item-price {
+  font-weight: 700;
+  color: #a26232;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0c5ac;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fffaf0;
+}
+
+.quantity-control button {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #7e4c1e;
+  transition: background-color 0.2s;
+}
+
+.quantity-control button:hover {
+  background-color: #f0e4d6;
+}
+
+.quantity-control button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-control span {
+  padding: 0 0.75rem;
+  min-width: 24px;
+  text-align: center;
+  color: #5b3d29;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #e35c47;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.remove-item:hover {
+  color: #c0392b;
+}
+
+.cart-summary {
+  background: #fff7ee;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #f2e6d9;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #4e3520;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d8c2ae;
+}
+
+.btn-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #7e4c1e;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-order:hover {
+  background-color: #a26232;
+  transform: translateY(-1px);
+}
+
+.btn-order svg {
+  stroke-width: 2;
+}
+
+.order-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #9c8a7a;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #7e4c1e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a26232;
+}
+
+/* Animation for empty cart */
+.empty-cart-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.empty-cart-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-in-out;
+}

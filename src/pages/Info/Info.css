@@ -5,7 +5,7 @@
   --primary-light: #fef3c7;
   --text-color: rgba(0, 0, 0, 0.8);
   --bg-light: #f8f4e9;
-  --gold-accent: #c9a227;
+  --gold-accent: #edc132;
   --section-padding: 5rem 0;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   color: var(--text-color);
@@ -26,6 +26,7 @@ body {
 
 /* Hero Section */
 .standards-hero {
+  margin-top: 7%;
   position: relative;
   height: 70vh;
   min-height: 500px;

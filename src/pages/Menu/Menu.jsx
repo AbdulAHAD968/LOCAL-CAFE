@@ -1,56 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import FilterButtons from '../../components/FilterButtons/FilterButtons';
 import MenuCard from '../../components/MenuCard/MenuCard';
 import { menuItems } from '../../plugNplay/menuItems';
+import { CartContext } from '../../components/CartSummary/CartContext';
 import './Menu.css';
 
 const Menu = () => {
+  
   const [activeCategory, setActiveCategory] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
-  const [cartItems, setCartItems] = useState([]);
   const [isCartNotification, setIsCartNotification] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
-  const categories = ['all', 'chai', 'snacks', 'combos' , 'paratha'];
+  const categories = ['all', 'chai', 'snacks', 'combos', 'paratha', 'icecream', 'beverages', 'desserts'];
 
   const priceRanges = [
     { id: 'all', label: 'All Prices' },
     { id: 'under50', label: 'Under Rs.50' },
     { id: '50to100', label: 'Rs.50 - Rs.100' },
-    { id: 'over100', label: 'Over Rs.100' }
+    { id: '100to200', label: 'Rs.100 - Rs.200' },
+    { id: '200to300', label: 'Rs.200 - Rs.300' },
+    { id: 'over300', label: 'Over Rs.300' }
   ];
 
-  useEffect(() => {
-    // Load cart from localStorage
-    const savedCart = localStorage.getItem('chaiMahfilCart');
-    if (savedCart) {
-      try {
-        const parsedCart = JSON.parse(savedCart);
-        if (parsedCart.expiry > Date.now()) {
-          setCartItems(parsedCart.items);
-        } else {
-          localStorage.removeItem('chaiMahfilCart');
-        }
-      } catch (e) {
-        console.error('Failed to parse cart', e);
-      }
-    }
-  }, []);
+  const handleAddToCart = (item) => {
 
-  const addToCart = (item) => {
-    const newCartItems = [...cartItems, item];
-    setCartItems(newCartItems);
+    const cartItem = {
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      category: item.category,
+      quantity: 1,
+    };
+    
+    addToCart(cartItem);
     
     // Show notification
     setIsCartNotification(true);
-    setTimeout(() => setIsCartNotification(false), 3000);
-    
-    // Save to localStorage with 5-minute expiry
-    const cartData = {
-      items: newCartItems,
-      expiry: Date.now() + 5 * 60 * 1000 // 5 minutes
-    };
-    localStorage.setItem('chaiMahfilCart', JSON.stringify(cartData));
+    setTimeout(() => setIsCartNotification(false), 2000);
   };
 
   const filteredItems = menuItems.filter(item => {
@@ -65,8 +53,12 @@ const Menu = () => {
         return item.price < 50;
       case '50to100':
         return item.price >= 50 && item.price <= 100;
-      case 'over100':
-        return item.price > 100;
+      case '100to200':
+        return item.price >= 100 && item.price <= 200;
+      case '200to300':
+        return item.price >= 200 && item.price <= 300;
+      case 'over300':
+        return item.price > 300;
       default:
         return true;
     }
@@ -156,7 +148,7 @@ const Menu = () => {
                 >
                   <MenuCard 
                     item={item} 
-                    onAddToCart={addToCart}
+                    onAddToCart={() => handleAddToCart(item)} // Use the corrected handler
                   />
                 </motion.div>
               ))

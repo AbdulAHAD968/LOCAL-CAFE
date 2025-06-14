@@ -6,27 +6,36 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Carousel.css';
 
-import img12 from './12.png';
+import img1 from '../../pages/images/Coffee shop-amico.png'
+import img2 from '../../pages/images/Eating together-pana.png';
+import img3 from '../../pages/images/Catering service-bro.png';
+import img4 from '../../pages/images/Product quality-bro.png';
 
 const Carousel = () => {
   const slides = [
     {
       id: 1,
-      image: img12,
+      image: img1,
       title: 'Authentic Chai Experience',
       subtitle: 'Brewed with tradition, served with love'
     },
     {
       id: 2,
-      image: img12,
+      image: img3,
       title: 'Fresh Snacks Daily',
       subtitle: 'Made with locally sourced ingredients'
     },
     {
       id: 3,
-      image: img12,
-      title: 'Perfect Hangout Spot',
-      subtitle: 'Relax and enjoy with friends'
+      image: img4,
+      title: 'Quality Ingredients',
+      subtitle: 'Only the best for our customers'
+    },
+    {
+      id: 4,
+      image: img2,
+      title: 'Community Vibes',
+      subtitle: 'Join us for events and gatherings'
     }
   ];
 

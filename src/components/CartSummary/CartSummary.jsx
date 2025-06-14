@@ -19,7 +19,7 @@ const CartSummary = ({ items, onClear }) => {
                 <li key={name} className="cart-item">
                   <span className="item-name">{name}</span>
                   <span className="item-quantity">x{count}</span>
-                  <span className="item-price">₹{item.price * count}</span>
+                  <span className="item-price">Rs.{item.price * count}</span>
                 </li>
               );
             })}
@@ -27,7 +27,7 @@ const CartSummary = ({ items, onClear }) => {
           
           <div className="cart-total">
             <span>Total:</span>
-            <span>₹{total}</span>
+            <span>Rs.{total}</span>
           </div>
           
           <div className="cart-actions">
