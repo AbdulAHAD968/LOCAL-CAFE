@@ -190,7 +190,7 @@ const Contact = () => {
             )}
             <iframe
               title="Chai Mahfil Location"
-              src={`https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d727.2178180171242!2d71.2766093!3d29.1292937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393bcbd0383bcef1%3A0xbb320dd62297e8d4!2s47HG%2BMQ4%2C%20Ahmadpur%20East%2C%20Pakistan!5e1!3m2!1sen!2s!4v1749816685484!5m2!1sen!2s${isMapLoaded ? '' : '&output=embed'}`}
+              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d624.9122813727134!2d71.27616070326475!3d29.12923689542192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393bcb00347607a5%3A0x52b5463959aa97a5!2sChai%20Mahfil!5e1!3m2!1sen!2s!4v1750007079711!5m2!1sen!2s${isMapLoaded ? '' : '&output=embed'}`}
               width="100%"
               height="100%"
               style={{ border: 0, filter: isMapLoaded ? 'none' : 'blur(5px)' }}
