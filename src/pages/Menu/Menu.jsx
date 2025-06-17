@@ -13,7 +13,7 @@ const Menu = () => {
   const [isCartNotification, setIsCartNotification] = useState(false);
   const { addToCart } = useContext(CartContext);
 
-  const categories = ['all', 'chai', 'snacks', 'combos', 'paratha', 'icecream', 'beverages', 'desserts'];
+  const categories = ['all', 'chai', 'snacks', 'soda', 'paratha', 'icecream', 'beverages', 'rolls'];
 
   const priceRanges = [
     { id: 'all', label: 'All Prices' },

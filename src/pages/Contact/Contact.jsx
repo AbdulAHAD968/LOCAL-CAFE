@@ -100,7 +100,7 @@ const Contact = () => {
                 <FaPhone />
               </div>
               <h3>Call Us</h3>
-              <p>+92 000 0000000</p>
+              <p>+92 300 6822595</p>
             </motion.div>
             
             <motion.div 
@@ -112,7 +112,7 @@ const Contact = () => {
                 <FaWhatsapp />
               </div>
               <h3>WhatsApp</h3>
-              <p>+92 000 0000000</p>
+              <p>+92 309 9225351</p>
             </motion.div>
             
             <motion.div 

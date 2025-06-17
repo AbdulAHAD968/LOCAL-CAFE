@@ -6,8 +6,8 @@ import MenuCard from '../../components/MenuCard/MenuCard';
 import './Home.css';
 
 import img13 from '../images/chai-image-home.webp';
-import img14 from '../images/samosa-home.webp';
-import img15 from '../images/chicken-paratha-home.jpg';
+import img14 from '../images/rolls/CHICKEN CHEESE PARATHA ROLL.webp';
+import img15 from '../images/soda/matka-soda.jpg';
 
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
@@ -25,23 +25,23 @@ const Home = () => {
       id: 1,
       name: 'Karak Chai',
       description: 'Traditional spiced tea with ginger, cardamom, and cinnamon',
-      price: 60,
+      price: 70,
       image: img13,
       premium: true
     },
     {
       id: 2,
-      name: 'Samosa',
-      description: 'Crispy pastry filled with spiced potatoes and peas',
-      price: 40,
+      name: 'Chicken Cheese Paratha Roll',
+      description: 'Crispy Cheesy chicken roll with a blend of spices',
+      price: 200,
       image: img14,
       premium: true
     },
     {
       id: 3,
-      name: 'Chicken Paratha',
-      description: 'Perfect pairing of our signature chai with crispy biscuits',
-      price: 150,
+      name: 'Matka Soda',
+      description: 'Refreshing soda served in a traditional clay pot',
+      price: 70,
       image: img15,
       premium: true
     }
