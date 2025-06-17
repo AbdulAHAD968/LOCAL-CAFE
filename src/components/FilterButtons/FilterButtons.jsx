@@ -14,11 +14,11 @@ const FilterButtons = ({ items, activeItem, onChange, isCategory }) => {
             <>
               {item === 'chai' && 'Chai'}
               {item === 'snacks' && 'Snacks'}
-              {item === 'combos' && 'Combos'}
+              {item === 'soda' && 'Soda'}
               {item === 'paratha' && 'Paratha'}
               {item === 'icecream' && 'Ice Cream'}
               {item === 'beverages' && 'Beverages'}
-              {item === 'desserts' && 'Desserts'}
+              {item === 'rolls' && 'Rolls'}
               {item === 'all' && 'All Items'}
             </>
           ) : (

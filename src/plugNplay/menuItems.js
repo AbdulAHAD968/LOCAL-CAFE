@@ -99,7 +99,7 @@ export const menuItems = [
 
   // ICE CREAM
   { id: 34, name: 'Special Khoya Qulfi', category: 'icecream', price: 60, description: 'Traditional Khoya-based frozen dessert', image: img15 },
-  { id: 15, name: 'Chocolate Ice Cream', category: 'icecream', price: 60, description: 'Traditional desi ice cream', image: img8 },
-  { id: 16, name: 'Strawberry Ice Cream', category: 'icecream', price: 60, description: 'Rose flavored ice cream with Strawberry', image: img9 },
+  { id: 35, name: 'Chocolate Ice Cream', category: 'icecream', price: 60, description: 'Traditional desi ice cream', image: img8 },
+  { id: 36, name: 'Strawberry Ice Cream', category: 'icecream', price: 60, description: 'Rose flavored ice cream with Strawberry', image: img9 },
 ];
 

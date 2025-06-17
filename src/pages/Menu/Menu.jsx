@@ -135,50 +135,51 @@ const Menu = () => {
         </div>
         
         <div className="menu-grid">
-          <AnimatePresence>
-            {filteredItems.length > 0 ? (
-              filteredItems.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                >
-                  <MenuCard 
-                    item={item} 
-                    onAddToCart={() => handleAddToCart(item)} // Use the corrected handler
-                  />
-                </motion.div>
-              ))
-            ) : (
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item, index) => (
+            <AnimatePresence key={item.id}>
               <motion.div
-                className="no-items"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <div className="no-items-content">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M9 3v15m-6 0h18M9 18l6-6m0 0l-6-6" />
-                  </svg>
-                  <h3>No items match your filters</h3>
-                  <p>Try adjusting your selection to discover our delicious offerings</p>
-                  <button 
-                    className="reset-filters"
-                    onClick={() => {
-                      setActiveCategory('all');
-                      setPriceFilter('all');
-                    }}
-                  >
-                    Reset Filters
-                  </button>
-                </div>
+                <MenuCard 
+                  item={item} 
+                  onAddToCart={() => handleAddToCart(item)} 
+                />
               </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+            </AnimatePresence>
+          ))
+        ) : (
+          <motion.div
+            className="no-items"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="no-items-content">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M9 3v15m-6 0h18M9 18l6-6m0 0l-6-6" />
+              </svg>
+              <h3>No items match your filters</h3>
+              <p>Try adjusting your selection to discover our delicious offerings</p>
+              <button 
+                className="reset-filters"
+                onClick={() => {
+                  setActiveCategory('all');
+                  setPriceFilter('all');
+                }}
+              >
+                Reset Filters
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </div>
+
+
       </div>
       
       {/* Cart Notification */}
